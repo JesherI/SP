@@ -1,5 +1,6 @@
 from django import forms
 from .models import User, UserType
+from django.contrib.auth.forms import AuthenticationForm
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput, label="Password")  # Para ocultar la contraseña al escribir
@@ -15,3 +16,7 @@ class UserTypeForm(forms.ModelForm):
     class Meta:
         model = UserType
         fields = ['name', 'description']
+
+class CustomLoginForm(AuthenticationForm):
+    username = forms.CharField(label="Username", widget=forms.TextInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(label="Password", widget=forms.PasswordInput(attrs={'class': 'form-control'}))
