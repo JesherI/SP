@@ -1,0 +1,88 @@
+/* General Configurations */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Grid Container */
+#grid-solicitudes {
+display: grid;
+grid-template-columns: 25% 1fr;
+grid-template-rows: auto 1fr;
+grid-template-areas: 
+    "logo header header"
+    "aside main main";               
+gap: 2px;
+height: 100vh;
+padding: 1%;
+}
+
+/* Estilos áreas */
+.header{
+    grid-area: header;
+    background-color: #EBF8F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+.aside{
+    grid-area: aside;
+    background-color: #6594B5;
+}
+.logo-section{
+    grid-area: logo;
+    background-color: #95ACC6;
+}
+.logo-section > .logo {
+    width: 80%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.aside > .information-section{
+    margin: 5%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+.main {
+    grid-area: main;
+    margin: 1%;
+}
+.main > .filer-section{
+    padding: 1%;
+}
+.card-section > .card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: solid;
+    border-width: 5px ;
+    border-color: #99D4FF;
+}
+.card > .info-card-section{
+    padding-left: 3%;
+}
+.card > .options-card-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3%;
+}
+.options-card-section > .card-selection{
+    cursor: pointer;
+    height: 20%;
+    width: auto;
+    border-radius: 5px;
+}
+.options-card-section > .info-option{
+    cursor: pointer;
+    background: none;
+    border: none;
+    
+}

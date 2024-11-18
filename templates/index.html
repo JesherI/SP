@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <title>Index</title>
 </head>
 <body>
-    <h1>Bienvenido a la página de inicio</h1>
-    <p>Este es el contenido de la página principal.</p>
+    <header class="main-title">
+        <div class="overlay">
+            <div class="main-title-content">
+                <img src="{% static 'images/KonradLogo.png'%}" alt="logo-k" class="logo">
+                <h1>Bienvenidos a Konrad Gourmet</h1>
+                <p>Delicias que despiertan tus sentidos</p>
+                <a href="{% url 'login' %}" class="btn-login">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
 </body>
 </html>

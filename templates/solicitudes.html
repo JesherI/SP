@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitudes de Productos</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/solicitudStyles.css' %}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div id="grid-solicitudes">
         <div class="logo-section">
@@ -20,19 +21,19 @@
         <aside class="aside">
             <div class="information-section">
                 <div class="general-section">
-                    <p>Nro de Solicitudes: {3}</p>
-                    <p>Solicitudes Pendientes: {2}</p>
-                    <p>Solicitudes Enviadas: {1}</p>
+                    <p>Nro de Solicitudes: {{3}}</p>
+                    <p>Solicitudes Pendientes: {{2}}</p>
+                    <p>Solicitudes Enviadas: {{1}}</p>
                 </div>
                 <div class="selection-info">
-                    <p>Solicitudes seleccionadas: {2}</p>
+                    <p id="count-solicitudes">Solicitudes seleccionadas: 0</p>
                     <ul>
                         <li>{Producto 1}</li>
                         <li>{Producto 2}</li>
                     </ul>
                 </div>
                 <div class="button-section">
-                    <button class="list-button">Listar</button>
+                    <button class="list-button open-form" onclick="openForm()">Listar</button>
                 </div>
             </div>
         </aside>
@@ -51,65 +52,35 @@
                     <option>Pendiente</option>
                     <option>Enviado</option>
                 </select>
-                <input type="number">
+                <input type="number" placeholder="Cantidad">
             </div>
-            <div class="card-section">
 
+            <div class="card-section">
+               
+                <div class="card">
+                    <div class="info-card-section">
+                        <p>#{id}</p>
+                        <p>{Nombre del Producto}</p>
+                        <ul>
+                            <li><p>Cantidad: {0}</p></li>
+                            <li><p>Marca: {0}</p></li>
+                            <li><p>Estado: {0}</p></li>
+                        </ul>
+                    </div>
+                    <div class="options-card-section">
+                        <input type="checkbox" class="card-selection" onclick="updateCount()">
+                        <button class="info-option"><i class="fa-solid fa-circle-info"></i></button>
+                    </div>
+                </div>
+                
             </div>
         </main>
-    </div>      
+    </div>
 </body>
 </html>
-<style>
-    /* Contenedor del grid */
-#grid-solicitudes {
-  display: grid;
-  grid-template-columns: 34% 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: 
-    "logo header header"
-    "aside main main";               
-  gap: 2px;
-  height: 100vh;
-  padding: 1%;
-}
-
-/* Estilos áreas */
-.header{
-    grid-area: header;
-    background-color: #EBF8F7;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 10%;
-}
-.aside{
-    grid-area: aside;
-    background-color: #6594B5;
-}
-.logo-section{
-    grid-area: logo;
-    background-color: #95ACC6;
-}
-.logo-section > .logo {
-    width: 80%;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-.aside > .information-section{
-    margin: 5%;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #FFFFFF;
-}
-
-.main {
-  grid-area: main;
-}
-
-</style>
+<script>
+    function updateCount(){
+        const checkedCount = document.querySelectorAll('.card-selection:checked').length
+        document.getElementById('count-solicitudes').innerText = 'Solicitudes seleccionadas: '+checkedCount;
+    }
+</script>

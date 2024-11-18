@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #13678A;
+}
+
+.main-title {
+    position: relative;
+    height: 100vh;
+    background: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/21/5f/e3/piazza-italia-by-storia.jpg?w=600&h=-1&s=1') no-repeat center center/cover;
+}
+
+/* Superposición semitransparente */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Contenido del héroe */
+.main-title-content {
+    max-width: 600px;
+}
+
+.main-title-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.main-title-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón de inicio de sesión */
+.btn-login {
+    background-color: #13678A; /* Color rojo gourmet */
+    color: white;
+    font-weight: bold;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-login:hover {
+    background-color: #0a3d52;
+    transform: translateY(-2px);
+}
+
+.btn-login:active {
+    transform: translateY(2px);
+}
