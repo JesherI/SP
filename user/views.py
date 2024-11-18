@@ -39,8 +39,12 @@ def list_user_types(request):
     user_types = UserType.objects.all()
     return render(request, 'list_user_types.html', {'user_types': user_types})
 
+def solicitudes(request):
+    return render(request, 'solicitudes.html')
+
 def index(request):
-    return render(request, 'index.html') 
+    return render(request, 'index.html')
+
 
 
 def user_login(request):

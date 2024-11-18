@@ -1,0 +1,80 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #f8f8f8;
+    padding: 20px;
+    width: 25%;
+    border-right: 1px solid #ddd;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filter {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.filter.active {
+    background-color: #bbb;
+}
+
+.requests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.request-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    width: calc(33% - 20px);
+    position: relative;
+}
+
+.request-card.locked {
+    background-color: #f0f0f0;
+    pointer-events: none;
+}
+
+.info-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: url('info-icon.png') no-repeat center center;
+    width: 24px;
+    height: 24px;
+}
+
+.info-icon.locked {
+    background: url('lock-icon.png') no-repeat center center;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
