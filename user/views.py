@@ -46,15 +46,16 @@ def index(request):
 def user_login(request):
     if request.method == 'POST':
         form = CustomLoginForm(request=request, data=request.POST)
+        print(form.errors)  # Esto te dará más detalles sobre los errores del formulario
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
-            
+
             if user is not None:
                 login(request, user)
                 messages.success(request, f"Bienvenido {user.username}!")
-                return redirect('index')  # Redirigir a la vista 'index'
+                return redirect('index')
             else:
                 messages.error(request, "Usuario o contraseña incorrectos")
         else:
